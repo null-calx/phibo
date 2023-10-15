@@ -1,12 +1,12 @@
 .PHONY: all
-all: vuln
+all: phibo
 
-vuln: vuln.o
-	ld -o vuln vuln.o
+phibo: phibo.o
+	ld -o phibo phibo.o
 
-vuln.o: vuln.nasm
-	nasm -o vuln.o -felf64 vuln.nasm
+phibo.o: phibo.nasm
+	nasm -o phibo.o -felf64 phibo.nasm
 
 .PHONY: clean
 clean:
-	rm -rfv vuln vuln.o
+	rm -rfv phibo phibo.o
