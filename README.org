@@ -1,0 +1,7 @@
+#+TITLE: README
+#+AUTHOR: illi
+
+* Phibo
+
+Phibo is a simple test program to test mmap syscall in linux kernel
+and print fibonacci sequence.
