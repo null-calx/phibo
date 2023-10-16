@@ -13,6 +13,7 @@
 
 %DEFINE SYS_WRITE 1
 %DEFINE SYS_MMAP 9
+%DEFINE SYS_MUNMAP 11
 %DEFINE SYS_EXIT 60
 
 %DEFINE LEN 384
@@ -73,13 +74,20 @@ loop:
 	cmp rcx, LEN
 	jl loop
 
-done:
-	; done
+	; print newline
 	mov byte [r15], 10
 	mov rsi, r15
 	mov rdx, 1
 	call print
 
+	; munmap
+	mov rax, SYS_MUNMAP
+	mov rdi, rbx
+	mov rsi, LEN + PLEN
+	syscall
+
+done:
+	; done
 	call exit
 
 	ret
