@@ -160,10 +160,8 @@ segment .data
 
 hello:
 	db	"Hello, world!", 10
-hello_len:
-	equ	$ - hello
+hello_len: equ $ - hello
 
 success:
 	db	"Successfully MMAPed memory!", 10
-success_len:
-	equ	$ - success
+success_len: equ $ - success
